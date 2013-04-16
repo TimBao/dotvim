@@ -8,8 +8,8 @@ call pathogen#infect()
 call pathogen#helptags()
 
 " Plugin of NERDTree.vim setting
-nmap <silent> <leader>fe :Vexplore<cr>
-nmap <silent> <leader>nt :NERDTreeToggle<cr>
+nmap <silent> <leader>fe :Vexplore<CR>
+nmap <silent> <leader>nt :NERDTreeToggle<CR>
 
 " Plugin of taglist.vim setting
 let Tlist_Show_One_File=1
@@ -39,3 +39,22 @@ let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
 " automatically open and close the popup menu / preview window
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest,preview
+
+" Plugin of ConqueTerm.vim setting
+noremap <leader>sh :ConqueTerm bash<CR>
+noremap <leader>shs :ConqueTermSplit bash<CR>
+noremap <leader>shv :ConqueTermVSplit bash<CR>
+noremap <leader>sht :ConqueTermTab bash<CR>
+
+if has('win32')
+    let g:ConqueTerm_PyVersion = 2
+    let g:ConqueTerm_PyExe = 'C:\Python27\python.exe'
+    let g:ConqueTerm_ColorMode = 'conceal'
+    let g:ConqueTerm_CodePage = 0
+else
+    let g:ConqueTerm_FastMode = 0
+    let g:ConqueTerm_Color = 1
+    let g:ConqueTerm_TERM = 'xterm'
+    let g:ConqueTerm_Syntax = 'conque'
+    let g:ConqueTerm_ReadUnfocused = 1
+endif
