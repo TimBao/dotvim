@@ -15,3 +15,7 @@ nmap <silent> <leader>nt :NERDTreeToggle<cr>
 let Tlist_Show_One_File=1
 let Tlist_Exit_OnlyWindow=1
 nmap <silent> <leader>fl :Tlist<CR>
+
+" Plugin of winmanager.vim setting
+let g:winManagerWindowLayout='FileExplorer|TagList'
+nmap wm :WMToggle<CR>

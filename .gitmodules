@@ -13,3 +13,9 @@
 [submodule "bundle/winmananger"]
 	path = bundle/winmananger
 	url = https://github.com/vim-scripts/winmanager.git
+[submodule "OmniCppComplete"]
+	path = OmniCppComplete
+	url = https://github.com/vim-scripts/OmniCppComplete.git
+[submodule "bundle/OmniCppComplete"]
+	path = bundle/OmniCppComplete
+	url = https://github.com/vim-scripts/OmniCppComplete.git
