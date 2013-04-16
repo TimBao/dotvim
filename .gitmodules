@@ -25,3 +25,6 @@
 [submodule "bundle/ConqueTerm"]
 	path = bundle/ConqueTerm
 	url = https://github.com/pthrasher/conqueterm-vim.git
+[submodule "bundle/PyDiction"]
+	path = bundle/PyDiction
+	url = https://github.com/vim-scripts/Pydiction.git
