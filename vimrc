@@ -1,11 +1,129 @@
 " Common setting for vim
+syntax enable                       "Syntax highlighting
+syntax on
+colorscheme torte                   "Color scheme
+
+set number                          "Show line number
+set nocompatible
+set autoindent                      "Copy indent from current line when starting a new line
+set smartindent
+set autoread                        "Automatically read it after file be changed outside of Vim
+set showmatch                       "When a bracket is inserted, briefly jump to the matching one
+set nobackup                        "Not backup file before overwriting a file
+set noswapfile                      "Not swap file
+set hlsearch                        "Highlighting of search matches
+set incsearch                       "Incremental searching
+set backspace=2                     "Influences the working of <BS>, <Del>, CTRL-W and CTRL-U in Insert mode
+
+set tabstop=4                       "Number of spaces that a <Tab> in the file counts for
+set shiftwidth=4                    "Number of spaces to use for each step of (auto)indent
+set expandtab                       "Tabs expanded to spaces
+set list listchars=tab:>- ":retab   "Show tab as >-, use retab to clean up wihte space
+
+set cursorline                      "Highlight the screen line of the cursor with CursorLine
+set cursorcolumn                    "Highlight the screen column of the cursor with CursorColumn
+
+set ruler                           "Show the line and column number of the cursor position, separated by a comma. See statusline.
+set statusline=%h%=%-14.(%l,%c%V%)\%<%p%%\\\%{strftime('%y-%m-%d\ %A')}
+
+set encoding=utf-8
+set fileencodings=utf-8,gb2312,gbk,gb18030,latin-1
+set fileencoding=utf-8
+
 let mapleader = ","
+
+"search in document
+nnoremap <silent> <F3> :lv /\<<c-r>=expand("<cword>")<CR>\>/j %<CR>:lw<CR>
+"switch windows
+nnoremap <silent> <C-TAB> <C-W>w
+"open setting preference
+noremap <leader>ee :e ~/.vimrc<CR>
+"map <leader>ee :e $vim/_vimrc<CR> "for windows
+
+"compile single file
+"au FileType c set makeprg=gcc\ %
+"au FIleType cpp set makeprg=g++ %
+
+if has("gui_macvim")
+    au GUIEnter * call MaximizeWindow()
+    "Set the guifont only for macvim
+    set guifont=Menlo:h15
+elseif has("win32")
+    au GUIEnter * simalt ~x
+else
+endif
+
+function! MaximizeWindow()
+    silent !wmctrl -r :ACTIVE: -b add, maximized_vert,maximized_horz
+endfunction
+
+function! RemoveTrailingWhitespace()
+    if &ft != "diff"
+        let b:curcol = col(".")
+        let b:curline = line(".")
+        silent! %s/\s\+$//
+        silent! %s/\(\s*\n\)\+\%$//
+        call cursor(b:curline, b:curcol)
+    endif
+endfunction
+autocmd BufWritePre * call RemoveTrailingWhitespace()
+
+nmap <F5> :CopyDefinition<CR>
+nmap <F6> :ImplementDefinition<CR>
+command! CopyDefinition :call s:GetDefinitionInfo()
+command! ImplementDefinition :call s:ImplementDefinition()
+function! s:GetDefinitionInfo()
+    exe 'normal ma'
+    " Get class
+    call search('^\s*\<class\>', 'b')
+    exe 'normal ^w"ayw'
+    let s:class = @a
+    let l:ns = search('^\s*\<namespace\>', 'b')
+    " Get namespace
+    if l:ns != 0
+    exe 'normal ^w"ayw'
+    let s:namespace = @a
+    else
+    let s:namespace = ''
+    endif
+    " Go back to definition
+    exe 'normal `a'
+    exe 'normal "aY'
+    let s:defline = substitute(@a, ';\n', '', '')
+    endfunction
+
+function! s:ImplementDefinition()
+    call append('.', s:defline)
+    exe 'normal j'
+    " Remove keywords
+    s/\<virtual\>\s*//e
+    s/\<static\>\s*//e
+    if s:namespace == ''
+    let l:classString = s:class . "::"
+    else
+    let l:classString = s:namespace . "::" . s:class . "::"
+    endif
+    " Remove default parameters
+    s/\s\{-}=\s\{-}[^,)]\{1,}//e
+    " Add class qualifier
+    exe 'normal ^f(bi' . l:classString
+    " Add brackets
+    exe "normal $o{\<CR>\<TAB>\<CR>}\<CR>\<ESC>kkkk"
+    " Fix indentation
+    exe 'normal =4j^'
+endfunction
+
+"------------------------------------------------------------------
 
 " Plugin of pathogen.vim setting
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 "call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
+
+" Some plugin need open the filetype
+filetype on
+filetype plugin on
 
 " Plugin of NERDTree.vim setting
 nmap <silent> <leader>fe :Vexplore<CR>
@@ -60,6 +178,8 @@ else
 endif
 
 " Plugin of python_pydiction.vim setting
-filetype plugin on
 let g:pydiction_menu_height = 20
 let g:pydiction_location='~/.vim/bundle/PyDiction/complete-dict'
+
+" Plugin of a.vim setting
+let g:alternateExtensions_CPP = "inc,h,H,HPP,hpp"
