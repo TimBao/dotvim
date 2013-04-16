@@ -58,3 +58,8 @@ else
     let g:ConqueTerm_Syntax = 'conque'
     let g:ConqueTerm_ReadUnfocused = 1
 endif
+
+" Plugin of python_pydiction.vim setting
+filetype plugin on
+let g:pydiction_menu_height = 20
+let g:pydiction_location='~/.vim/bundle/PyDiction/complete-dict'
