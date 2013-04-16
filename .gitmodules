@@ -22,3 +22,6 @@
 [submodule "bundle/AlternateFiles"]
 	path = bundle/AlternateFiles
 	url = https://github.com/vim-scripts/a.vim.git
+[submodule "bundle/ConqueTerm"]
+	path = bundle/ConqueTerm
+	url = https://github.com/pthrasher/conqueterm-vim.git
