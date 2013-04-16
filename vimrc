@@ -11,3 +11,7 @@ call pathogen#helptags()
 nmap <silent> <leader>fe :Vexplore<cr>
 nmap <silent> <leader>nt :NERDTreeToggle<cr>
 
+" Plugin of taglist.vim setting
+let Tlist_Show_One_File=1
+let Tlist_Exit_OnlyWindow=1
+nmap <silent> <leader>fl :Tlist<CR>

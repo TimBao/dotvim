@@ -10,3 +10,6 @@
 [submodule "bundle/taglist"]
 	path = bundle/taglist
 	url = https://github.com/vim-scripts/taglist.vim.git
+[submodule "bundle/winmananger"]
+	path = bundle/winmananger
+	url = https://github.com/vim-scripts/winmanager.git
