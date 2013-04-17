@@ -11,12 +11,12 @@
 
 ### Update Plugin
 
-cd ~/.vim/bundle/vim-markdown # 将 vim-markdown 替换为需要升级的插件名字
-git pull origin master
+1. cd ~/.vim/bundle/vim-markdown  # Replace vim-markdown to your plugin name
+1. git pull origin master
 
-cd ~/.vim
-git submodule foreach git pull origin master
+1. cd ~/.vim
+1. git submodule foreach git pull origin master
 
 ### Delete Plugin
 
-git rm bundle/vim-markdown # 将 vim-markdown 替换为需要升级的插件名字
+git rm bundle/vim-markdown  # Replace vim-markdown to your plugin name
