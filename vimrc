@@ -37,8 +37,11 @@ nnoremap <silent> <F3> :lv /\<<c-r>=expand("<cword>")<CR>\>/j %<CR>:lw<CR>
 "switch windows
 nnoremap <silent> <C-TAB> <C-W>w
 "open setting preference
-noremap <leader>ee :e ~/.vimrc<CR>
-"map <leader>ee :e $vim/_vimrc<CR> "for windows
+if has('win32')
+    map <leader>ee :e $vim/_vimrc<CR>
+else
+    noremap <leader>ee :e ~/.vimrc<CR>
+endif
 
 "compile single file
 "au FileType c set makeprg=gcc\ %
@@ -118,7 +121,6 @@ endfunction
 " Plugin of pathogen.vim setting
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
-"call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
 " Some plugin need open the filetype
@@ -139,7 +141,11 @@ let g:winManagerWindowLayout='FileExplorer|TagList'
 nmap wm :WMToggle<CR>
 
 " Plugin of OmniCppComplete.vim setting
-set tags+=~/.vim/ctags/cpp
+if has('win32')
+    set tags+=$vim/vimfiles/ctags/cpp
+else
+    set tags+=~/.vim/ctags/cpp
+endif
 "set tags+=~/.vim/tags/gl
 "set tags+=~/.vim/tags/sdl
 "set tags+=~/.vim/tags/qt4

@@ -9,6 +9,17 @@
 1. git submodule init
 1. git submodule update
 
+----
+### on Windows
+
+1. cd $vim
+1. git clone http://github.com/TimBao/dotvim.git ./vimfiles
+1. mklink \_vimrc vimfiles/vimrc
+1. cd vimfiles
+1. git submodule init
+1. git submodule update
+
+
 ### Update Plugin
 
 1. cd ~/.vim/bundle/vim-markdown  # Replace vim-markdown to your plugin name
