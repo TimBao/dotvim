@@ -3,34 +3,34 @@
 	url = git://github.com/tpope/vim-pathogen.git
 [submodule "bundle/fugitive"]
 	path = bundle/fugitive
-	url = https://github.com/tpope/vim-fugitive.git
+	url = git://github.com/tpope/vim-fugitive.git
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
-	url = https://github.com/scrooloose/nerdtree.git
+	url = git://github.com/scrooloose/nerdtree.git
 [submodule "bundle/taglist"]
 	path = bundle/taglist
-	url = https://github.com/vim-scripts/taglist.vim.git
+	url = git://github.com/vim-scripts/taglist.vim.git
 [submodule "bundle/winmananger"]
 	path = bundle/winmananger
-	url = https://github.com/vim-scripts/winmanager.git
+	url = git://github.com/vim-scripts/winmanager.git
 [submodule "OmniCppComplete"]
 	path = OmniCppComplete
-	url = https://github.com/vim-scripts/OmniCppComplete.git
+	url = git://github.com/vim-scripts/OmniCppComplete.git
 [submodule "bundle/OmniCppComplete"]
 	path = bundle/OmniCppComplete
-	url = https://github.com/vim-scripts/OmniCppComplete.git
+	url = git://github.com/vim-scripts/OmniCppComplete.git
 [submodule "bundle/AlternateFiles"]
 	path = bundle/AlternateFiles
-	url = https://github.com/vim-scripts/a.vim.git
+	url = git://github.com/vim-scripts/a.vim.git
 [submodule "bundle/ConqueTerm"]
 	path = bundle/ConqueTerm
-	url = https://github.com/pthrasher/conqueterm-vim.git
+	url = git://github.com/pthrasher/conqueterm-vim.git
 [submodule "bundle/PyDiction"]
 	path = bundle/PyDiction
-	url = https://github.com/vim-scripts/Pydiction.git
+	url = git://github.com/vim-scripts/Pydiction.git
 [submodule "bundle/Markdown"]
 	path = bundle/Markdown
-	url = https://github.com/hallison/vim-markdown.git
+	url = git://github.com/hallison/vim-markdown.git
 [submodule "bundle/SnipMate"]
 	path = bundle/SnipMate
-	url = https://github.com/msanders/snipmate.vim.git
+	url = git://github.com/msanders/snipmate.vim.git
