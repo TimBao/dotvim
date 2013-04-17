@@ -14,9 +14,11 @@
 1. cd ~/.vim/bundle/vim-markdown  # Replace vim-markdown to your plugin name
 1. git pull origin master
 
+----
+
 1. cd ~/.vim
 1. git submodule foreach git pull origin master
 
 ### Delete Plugin
 
-git rm bundle/vim-markdown  # Replace vim-markdown to your plugin name
+> git rm bundle/vim-markdown  # Replace vim-markdown to your plugin name
