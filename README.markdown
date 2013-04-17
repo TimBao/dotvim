@@ -19,6 +19,8 @@
 1. git submodule init
 1. git submodule update
 
+---
+1. If you want to support chinese font, please change encodding to cp936
 
 ### Update Plugin
 
