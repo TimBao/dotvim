@@ -183,3 +183,8 @@ let g:pydiction_location='~/.vim/bundle/PyDiction/complete-dict'
 
 " Plugin of a.vim setting
 let g:alternateExtensions_CPP = "inc,h,H,HPP,hpp"
+
+" Plugin of snipMate.vim setting
+if has('win32')
+    let g:snippets_dir='$vim/vimfiles/bundle/SnipMate/snippets'
+endif
