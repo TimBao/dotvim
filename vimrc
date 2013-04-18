@@ -30,10 +30,13 @@ set encoding=utf-8
 set fileencodings=utf-8,gb2312,gbk,gb18030,latin-1
 set fileencoding=utf-8
 
+set autochdir                       "Set auto change current work folder.
+
 let mapleader = ","
 
 "search in document
 nnoremap <silent> <F3> :lv /\<<c-r>=expand("<cword>")<CR>\>/j %<CR>:lw<CR>
+nnoremap <silent> <F4> :lv /\<TODO\>/j ./**/*.cpp<CR>:lw<CR>
 "switch windows
 nnoremap <silent> <C-TAB> <C-W>w
 "open setting preference
