@@ -188,7 +188,11 @@ endif
 
 " Plugin of python_pydiction.vim setting
 let g:pydiction_menu_height = 20
-let g:pydiction_location='~/.vim/bundle/PyDiction/complete-dict'
+if has('win32')
+    let g:pydiction_location='~/.vim/bundle/PyDiction/complete-dict'
+else
+    let g:pydiction_location='$vim/vimfiles/bundle/PyDiction/complete-dict'
+endif
 
 " Plugin of a.vim setting
 let g:alternateExtensions_CPP = "inc,h,H,HPP,hpp"
