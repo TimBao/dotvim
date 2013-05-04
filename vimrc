@@ -50,7 +50,7 @@ endif
 "au FileType c set makeprg=gcc\ %
 "au FIleType cpp set makeprg=g++ %
 
-if has("gui_macvim")
+if has("gui_running")
     au GUIEnter * call MaximizeWindow()
     "Set the guifont only for macvim
     set guifont=Menlo:h15
@@ -200,4 +200,6 @@ let g:alternateExtensions_CPP = "inc,h,H,HPP,hpp"
 " Plugin of snipMate.vim setting
 if has('win32')
     let g:snippets_dir='$vim/vimfiles/bundle/SnipMate/snippets'
+else
+    let g:snippets_dir='~/.vim/vimfiles/bundle/SnipMate/snippets'
 endif
