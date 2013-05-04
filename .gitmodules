@@ -36,4 +36,4 @@
 	url = git://github.com/msanders/snipmate.vim.git
 [submodule "bundle/DrawIt"]
 	path = bundle/DrawIt
-	url = git@github.com:vim-scripts/DrawIt.git
+	url = git://github.com/vim-scripts/DrawIt.git
