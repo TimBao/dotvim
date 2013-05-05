@@ -38,7 +38,7 @@ let mapleader = ","
 nnoremap <silent> <F3> :lv /\<<c-r>=expand("<cword>")<CR>\>/j %<CR>:lw<CR>
 nnoremap <silent> <F4> :lv /\<TODO\>/j ./**/*.cpp<CR>:lw<CR>
 "switch windows
-nnoremap <silent> <C-TAB> <C-W>w
+nnoremap <silent> <C-Tab> <C-W>w
 "open setting preference
 if has('win32')
     map <leader>ee :e $vim/_vimrc<CR>
@@ -201,5 +201,5 @@ let g:alternateExtensions_CPP = "inc,h,H,HPP,hpp"
 if has('win32')
     let g:snippets_dir='$vim/vimfiles/bundle/SnipMate/snippets'
 else
-    let g:snippets_dir='~/.vim/vimfiles/bundle/SnipMate/snippets'
+    let g:snippets_dir='~/.vim/bundle/SnipMate/snippets'
 endif
