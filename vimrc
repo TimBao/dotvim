@@ -3,6 +3,7 @@ syntax enable                       "Syntax highlighting
 syntax on
 colorscheme torte                   "Color scheme
 
+set nowinfixwidth
 set number                          "Show line number
 set nocompatible
 set autoindent                      "Copy indent from current line when starting a new line
@@ -22,6 +23,8 @@ set list listchars=tab:>- ":retab   "Show tab as >-, use retab to clean up wihte
 
 set cursorline                      "Highlight the screen line of the cursor with CursorLine
 set cursorcolumn                    "Highlight the screen column of the cursor with CursorColumn
+"Convert Hightlight cursorline to underline
+hi cursorline guibg=NONE gui=underline
 
 set ruler                           "Show the line and column number of the cursor position, separated by a comma. See statusline.
 set statusline=%h%=%-14.(%l,%c%V%)\%<%p%%\\\%{strftime('%y-%m-%d\ %A')}
@@ -132,7 +135,7 @@ filetype plugin on
 " Plugin of NERDTree.vim setting
 nmap <silent> <leader>fe :Vexplore<CR>
 nmap <silent> <leader>nt :NERDTreeToggle<CR>
-let NERDTreeWinSize = winwidth(0) / 2
+let NERDTreeWinSize = winwidth(0)/2
 
 " Plugin of taglist.vim setting
 let Tlist_Show_One_File=1
