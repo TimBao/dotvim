@@ -133,6 +133,7 @@ filetype plugin on
 " Plugin of NERDTree.vim setting
 nmap <silent> <leader>fe :Vexplore<CR>
 nmap <silent> <leader>nt :NERDTreeToggle<CR>
+let NERDTreeWinSize = winwidth(0) / 2
 
 " Plugin of taglist.vim setting
 let Tlist_Show_One_File=1
