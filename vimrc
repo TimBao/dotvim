@@ -50,13 +50,12 @@ endif
 "au FileType c set makeprg=gcc\ %
 "au FIleType cpp set makeprg=g++ %
 
-if has("gui_running")
+if has("win32")
+    au GUIEnter * simalt ~x
+else
     au GUIEnter * call MaximizeWindow()
     "Set the guifont only for macvim
     set guifont=Menlo:h15
-elseif has("win32")
-    au GUIEnter * simalt ~x
-else
 endif
 
 function! MaximizeWindow()
