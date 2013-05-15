@@ -24,6 +24,7 @@ set cursorline                      "Highlight the screen line of the cursor wit
 set cursorcolumn                    "Highlight the screen column of the cursor with CursorColumn
 
 set ruler                           "Show the line and column number of the cursor position, separated by a comma. See statusline.
+set laststatus=2                    "Always show statusline.
 set statusline=%h%=%-14.(%l,%c%V%)\%<%p%%\\\%{strftime('%y-%m-%d\ %A')}
 
 set encoding=utf-8
