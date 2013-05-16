@@ -1,7 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='D:/Source/tbao_NIMPCCH198_8594/client/c/core/nbservices/feature_130313_map3d_rel2_1/include'
-let g:netrw_dirhist_2='D:\Source\tbao_NIMPCCH198_8594\client\c\core\nbservices\feature_130313_map3d_rel2_1\src\map\mapview'
-let g:netrw_dirhist_3='C:\Program Files (x86)\Vim'
-let g:netrw_dirhist_4='C:/Program Files (x86)/Vim'
-let g:netrw_dirhist_5='C:\Program Files (x86)\Vim'
