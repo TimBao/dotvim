@@ -122,6 +122,10 @@ function! s:ImplementDefinition()
     exe 'normal =4j^'
 endfunction
 
+if &diff
+    nnoremap <F7> [c
+    nnoremap <F8> ]c
+endif
 "------------------------------------------------------------------
 
 " Plugin of pathogen.vim setting
