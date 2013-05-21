@@ -125,6 +125,9 @@ endfunction
 if &diff
     nnoremap <F7> [c
     nnoremap <F8> ]c
+else
+	map <F7> :cp<CR>
+	map <F8> :cn<CR>
 endif
 "------------------------------------------------------------------
 
