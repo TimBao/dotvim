@@ -70,10 +70,10 @@ function! RemoveTrailingWhitespace()
     if &ft != "diff"
         let b:curcol = col(".")
         let b:curline = line(".")
-		"remove only current line.
+        "remove only current line.
         silent! .s/\s\+$//
         silent! .s/\(\s*\n\)\+\%$//
-		" remove all lines.
+        " remove all lines.
         "silent! %s/\s\+$//
         "silent! %s/\(\s*\n\)\+\%$//
         call cursor(b:curline, b:curcol)
