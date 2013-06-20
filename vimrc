@@ -59,11 +59,11 @@ if has("win32")
 else
     au GUIEnter * call MaximizeWindow()
     "Set the guifont only for macvim
-    set guifont=Menlo:h15
+    "set guifont=Menlo:h15
 endif
 
 function! MaximizeWindow()
-    silent !wmctrl -r :ACTIVE: -b add, maximized_vert,maximized_horz
+    silent !wmctrl -r :ACTIVE: -b add,maximized_vert,maximized_horz
 endfunction
 
 function! RemoveTrailingWhitespace()
