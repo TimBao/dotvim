@@ -54,14 +54,17 @@ endif
 "au FileType c set makeprg=gcc\ %
 "au FIleType cpp set makeprg=g++ %
 
-if has("win32")
+if has("gui_win32")
     au GUIEnter * simalt ~x
-else
+elseif has("gui_macvim")
     au GUIEnter * call MaximizeWindow()
     "Set the guifont only for macvim
-    "set guifont=Menlo:h15
+    set guifont=Menlo:h15
+else
+    au GUIEnter * call MaximizeWindow()
 endif
 
+" Need to install wmctrl.
 function! MaximizeWindow()
     silent !wmctrl -r :ACTIVE: -b add,maximized_vert,maximized_horz
 endfunction
@@ -183,10 +186,16 @@ au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest,preview
 
 " Plugin of ConqueTerm.vim setting
-noremap <leader>sh :ConqueTerm bash<CR>
-noremap <leader>shs :ConqueTermSplit bash<CR>
-noremap <leader>shv :ConqueTermVSplit bash<CR>
-noremap <leader>sht :ConqueTermTab bash<CR>
+if has("win32")
+    noremap <leader>sh :ConqueTerm bash<CR>
+    noremap <leader>shs :ConqueTermSplit bash<CR>
+    noremap <leader>shv :ConqueTermVSplit bash<CR>
+    noremap <leader>sht :ConqueTermTab bash<CR>
+else
+    noremap <leader>sh :ConqueTerm PowerShell.exe<CR>
+    noremap <leader>shs :ConqueTermSplit PowerShell.exe<CR>
+    noremap <leader>shv :ConqueTermVSplit PowerShell.exe<CR>
+    noremap <leader>sht :ConqueTermTab PowerShell.exe<CR>
 
 if has('win32')
     let g:ConqueTerm_PyVersion = 2
