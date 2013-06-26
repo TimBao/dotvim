@@ -133,8 +133,8 @@ if &diff
     nnoremap <F7> [c
     nnoremap <F8> ]c
 else
-	map <F7> :cp<CR>
-	map <F8> :cn<CR>
+    map <F7> :cp<CR>
+    map <F8> :cn<CR>
 endif
 "------------------------------------------------------------------
 
@@ -187,15 +187,16 @@ set completeopt=menuone,menu,longest,preview
 
 " Plugin of ConqueTerm.vim setting
 if has("win32")
-    noremap <leader>sh :ConqueTerm bash<CR>
-    noremap <leader>shs :ConqueTermSplit bash<CR>
-    noremap <leader>shv :ConqueTermVSplit bash<CR>
-    noremap <leader>sht :ConqueTermTab bash<CR>
-else
     noremap <leader>sh :ConqueTerm PowerShell.exe<CR>
     noremap <leader>shs :ConqueTermSplit PowerShell.exe<CR>
     noremap <leader>shv :ConqueTermVSplit PowerShell.exe<CR>
     noremap <leader>sht :ConqueTermTab PowerShell.exe<CR>
+else
+    noremap <leader>sh :ConqueTerm bash<CR>
+    noremap <leader>shs :ConqueTermSplit bash<CR>
+    noremap <leader>shv :ConqueTermVSplit bash<CR>
+    noremap <leader>sht :ConqueTermTab bash<CR>
+endif
 
 if has('win32')
     let g:ConqueTerm_PyVersion = 2
