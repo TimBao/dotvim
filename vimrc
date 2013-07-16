@@ -5,9 +5,16 @@ colorscheme torte                   "Color scheme
 
 set nowinfixwidth
 set number                          "Show line number
-set nocompatible
-set autoindent                      "Copy indent from current line when starting a new line
-set smartindent
+set nocompatible                    "Close compatible model
+
+" set autoindent                      "Copy indent from current line when starting a new line
+" set smartindent
+" C code format
+set cinoptions=:0,p0,t0
+set cinwords=if,else,while,do,for,switch,case
+set formatoptions=tcqr
+set cindent
+
 set autoread                        "Automatically read it after file be changed outside of Vim
 set showmatch                       "When a bracket is inserted, briefly jump to the matching one
 set nobackup                        "Not backup file before overwriting a file
