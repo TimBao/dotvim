@@ -43,8 +43,7 @@ set fileencoding=utf-8
 
 set autochdir                       "Set auto change current work folder.
 
-let mapleader = ","
-
+let mapleader = "," 
 "search in document
 nnoremap <silent> <F3> :lv /\<<c-r>=expand("<cword>")<CR>\>/j %<CR>:lw<CR>
 nnoremap <silent> <F4> :lv /\<TODO\>/j ./**/*.cpp<CR>:lw<CR>
@@ -143,6 +142,9 @@ else
     map <F7> :cp<CR>
     map <F8> :cn<CR>
 endif
+
+:source $VIMRUNTIME/ftplugin/man.vim
+nmap <leader>m :Man 3 <cword><CR>
 "------------------------------------------------------------------
 
 " Plugin of pathogen.vim setting
