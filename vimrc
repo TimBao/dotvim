@@ -173,8 +173,10 @@ nmap wm :WMToggle<CR>
 " Plugin of OmniCppComplete.vim setting
 if has('win32')
     set tags+=$vim/vimfiles/ctags/cpp
+    set tags+=$vim/vimfiles/ctags/code_tags
 else
     set tags+=~/.vim/ctags/cpp
+    set tags+=~/.vim/ctags/code_tags
 endif
 "set tags+=~/.vim/tags/gl
 "set tags+=~/.vim/tags/sdl
