@@ -239,3 +239,9 @@ if has('win32')
 else
     let g:snippets_dir='~/.vim/bundle/SnipMate/snippets'
 endif
+
+" Plugin of CommandT
+if has('win32')
+    let s:ruby_path='c:\Ruby192\bin'
+else
+endif
