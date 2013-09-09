@@ -123,7 +123,8 @@ function! s:ImplementDefinition()
     if s:namespace == ''
     let l:classString = s:class . "::"
     else
-    let l:classString = s:namespace . "::" . s:class . "::"
+    let l:classString = s:class . "::"
+    "let l:classString = s:namespace . "::" . s:class . "::"
     endif
     " Remove default parameters
     s/\s\{-}=\s\{-}[^,)]\{1,}//e
