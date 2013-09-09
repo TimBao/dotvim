@@ -40,3 +40,6 @@
 [submodule "bundle/Perforce"]
 	path = bundle/Perforce
 	url = git://github.com/vim-scripts/perforce.vim.git
+[submodule "bundle/Ctrlp"]
+	path = bundle/Ctrlp
+	url = git://github.com/kien/ctrlp.vim.git
