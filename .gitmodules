@@ -40,3 +40,6 @@
 [submodule "bundle/Perforce"]
 	path = bundle/Perforce
 	url = git://github.com/vim-scripts/perforce.vim.git
+[submodule "bundle/command-t"]
+	path = bundle/command-t
+	url = git://git.wincent.com/command-t.git

@@ -174,8 +174,10 @@ nmap wm :WMToggle<CR>
 " Plugin of OmniCppComplete.vim setting
 if has('win32')
     set tags+=$vim/vimfiles/ctags/cpp
+    set tags+=$vim/vimfiles/ctags/code_tags
 else
     set tags+=~/.vim/ctags/cpp
+    set tags+=~/.vim/ctags/code_tags
 endif
 "set tags+=~/.vim/tags/gl
 "set tags+=~/.vim/tags/sdl
@@ -237,4 +239,10 @@ if has('win32')
     let g:snippets_dir='$vim/vimfiles/bundle/SnipMate/snippets'
 else
     let g:snippets_dir='~/.vim/bundle/SnipMate/snippets'
+endif
+
+" Plugin of CommandT
+if has('win32')
+    let s:ruby_path='c:\Ruby192\bin'
+else
 endif
