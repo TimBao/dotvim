@@ -35,3 +35,6 @@
 ### Delete Plugin
 
 > git rm bundle/vim-markdown  # Replace vim-markdown to your plugin name
+
+## Attention
+1. commonT plugin need ruby support.

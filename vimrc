@@ -123,7 +123,8 @@ function! s:ImplementDefinition()
     if s:namespace == ''
     let l:classString = s:class . "::"
     else
-    let l:classString = s:namespace . "::" . s:class . "::"
+    let l:classString = s:class . "::"
+    "let l:classString = s:namespace . "::" . s:class . "::"
     endif
     " Remove default parameters
     s/\s\{-}=\s\{-}[^,)]\{1,}//e
@@ -242,3 +243,10 @@ endif
 
 " Plugin of EasyMotin.vim setting
 let g:EasyMotion_leader_key = '<leader>'
+
+" Plugin of ctrlp.vim setting 
+if has('win32')
+    set runtimepath^=$vim/vimfiles/bundle/ctrlp.vim
+else
+    set runtimepath^=~.vim/bundle/Ctrlp
+endif
