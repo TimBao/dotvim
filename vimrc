@@ -239,3 +239,6 @@ if has('win32')
 else
     let g:snippets_dir='~/.vim/bundle/SnipMate/snippets'
 endif
+
+" Plugin of EasyMotin.vim setting
+let g:EasyMotion_leader_key = '<leader>'
