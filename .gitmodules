@@ -46,3 +46,6 @@
 [submodule "bundle/Ctrlp"]
 	path = bundle/Ctrlp
 	url = git://github.com/kien/ctrlp.vim.git
+[submodule "bundle/Cscope"]
+	path = bundle/Cscope
+	url = https://github.com/vim-scripts/cscope.vim.git
