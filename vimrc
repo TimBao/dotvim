@@ -250,3 +250,10 @@ if has('win32')
 else
     set runtimepath^=~.vim/bundle/Ctrlp
 endif
+
+" Add cscope db
+if has('cscope')
+    if exists("$VIM/CSCOPEDB/cscope.out")
+        cs add $VIM/CSCOPEDB/cscope.out
+    endif
+endif
