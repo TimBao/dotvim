@@ -253,7 +253,9 @@ endif
 
 " Add cscope db
 if has('cscope')
-    if exists("$VIM/CSCOPEDB/cscope.out")
-        cs add $VIM/CSCOPEDB/cscope.out
+    set nocsverb
+    if !has('win32') && exists("$HOME/.vim/CSCOPEDB/cscope.out")
+        cs add ~/.vim/CSCOPEDB/cscope.out
     endif
+    set csverb
 endif
