@@ -49,3 +49,6 @@
 [submodule "bundle/Cscope"]
 	path = bundle/Cscope
 	url = https://github.com/vim-scripts/cscope.vim.git
+[submodule "vim-commentary"]
+	path = vim-commentary
+	url = git://github.com/tpope/vim-commentary.git
