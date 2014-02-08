@@ -165,6 +165,9 @@ let NERDTreeWinSize = winwidth(0)/2
 " Plugin of taglist.vim setting
 let Tlist_Show_One_File=1
 let Tlist_Exit_OnlyWindow=1
+if !has('win32')
+    let Tlist_Ctags_Cmd = '/opt/local/bin/ctags'
+endif
 nmap <silent> <leader>fl :Tlist<CR>
 
 " Plugin of winmanager.vim setting
@@ -242,7 +245,8 @@ else
 endif
 
 " Plugin of EasyMotin.vim setting
-let g:EasyMotion_leader_key = '<leader>'
+"let g:EasyMotion_leader_key = '<leader>'
+map <Leader> <Plug>(easymotion-prefix)
 
 " Plugin of ctrlp.vim setting 
 if has('win32')
