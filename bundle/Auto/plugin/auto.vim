@@ -16,7 +16,7 @@ no!<M-j> <Down>
 no!<M-h> <Left>
 no!<M-l> <Right>
 nm<silent> ;; :q!<CR>
-nm<silent> ,, :wq<CR>
+"nm<silent> ,, :wq<CR>
 au BufRead,BufNewFile *.html setf html
 au FileType python,ruby,sh :call Py()
 au FileType cpp,c,cc,h,html,perl :call Cc()
