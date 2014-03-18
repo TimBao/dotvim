@@ -46,3 +46,6 @@
 [submodule "bundle/Cscope"]
 	path = bundle/Cscope
 	url = https://github.com/vim-scripts/cscope.vim.git
+[submodule "bundle/DoxygenToolkit"]
+	path = bundle/DoxygenToolkit
+	url = git@github.com:vim-scripts/DoxygenToolkit.vim.git
