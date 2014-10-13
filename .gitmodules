@@ -61,3 +61,6 @@
 [submodule "bundle/undotree"]
 	path = bundle/undotree
 	url = git@github.com:mbbill/undotree.git
+[submodule "bundle/nerdcommenter"]
+	path = bundle/nerdcommenter
+	url = git@github.com:scrooloose/nerdcommenter.git
