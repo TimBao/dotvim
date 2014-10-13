@@ -43,7 +43,7 @@ set fileencoding=utf-8
 
 set autochdir                       "Set auto change current work folder.
 
-let mapleader = "," 
+let mapleader = ","
 "search in document
 nnoremap <silent> <F3> :lv /\<<c-r>=expand("<cword>")<CR>\>/j %<CR>:lw<CR>
 nnoremap <silent> <F4> :lv /\<TODO\>/j ./**/*.cpp<CR>:lw<CR>
@@ -80,11 +80,11 @@ function! RemoveTrailingWhitespace()
         let b:curcol = col(".")
         let b:curline = line(".")
         "remove only current line.
-        silent! .s/\s\+$//
-        silent! .s/\(\s*\n\)\+\%$//
+"        silent! .s/\s\+$//
+"        silent! .s/\(\s*\n\)\+\%$//
         " remove all lines.
-        "silent! %s/\s\+$//
-        "silent! %s/\(\s*\n\)\+\%$//
+        silent! %s/\s\+$//
+        silent! %s/\(\s*\n\)\+\%$//
         call cursor(b:curline, b:curcol)
     endif
 endfunction
@@ -248,7 +248,7 @@ endif
 "let g:EasyMotion_leader_key = '<leader>'
 map <Leader> <Plug>(easymotion-prefix)
 
-" Plugin of ctrlp.vim setting 
+" Plugin of ctrlp.vim setting
 if has('win32')
     set runtimepath^=$vim/vimfiles/bundle/ctrlp.vim
 else
@@ -265,7 +265,6 @@ if has('cscope')
 endif
 
 " Plugin of DoxygenToolkit.vim setting
-
 "let g:DoxygenToolkit_briefTag_pre="@Synopsis  "
 "let g:DoxygenToolkit_paramTag_pre="@Param "
 "let g:DoxygenToolkit_returnTag="@Returns   "
@@ -273,3 +272,10 @@ endif
 "let g:DoxygenToolkit_blockFooter="----------------------------------------------------------------------------"
 "let g:DoxygenToolkit_authorName="Tim Bao"
 "let g:DoxygenToolkit_licenseTag="My own license"
+
+" Plugin of Syntastic.vim setting
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_python_python_exec = '/opt/local/bin/python2.7'
+
+" Plugin of UndoTree setting
+nnoremap <silent> <leader>ud :UndotreeToggle<CR>
