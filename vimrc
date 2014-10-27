@@ -279,3 +279,4 @@ let g:syntastic_python_python_exec = '/opt/local/bin/python2.7'
 
 " Plugin of UndoTree setting
 nnoremap <silent> <leader>ud :UndotreeToggle<CR>
+let g:undotree_WindowLayout = 4
