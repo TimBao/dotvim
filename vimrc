@@ -280,3 +280,8 @@ let g:syntastic_python_python_exec = '/opt/local/bin/python2.7'
 " Plugin of UndoTree setting
 nnoremap <silent> <leader>ud :UndotreeToggle<CR>
 let g:undotree_WindowLayout = 4
+
+" Preview the markdown file in chrome brower. Chrome brower has install
+" "markdown preview plus" plugin.
+autocmd BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn} map <Leader>y :!open -a /Applications/Google\ Chrome.app %:p <CR>
+"autocmd BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn} map <Leader>y :!start "/Applications/Google\ Chrome.app" "%:p"<CR>
