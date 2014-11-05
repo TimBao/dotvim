@@ -6,6 +6,7 @@ colorscheme torte                   "Color scheme
 set nowinfixwidth
 set number                          "Show line number
 set nocompatible                    "Close compatible model
+autocmd FileType python setlocal softtabstop=4 textwidth=78
 
 " set autoindent                      "Copy indent from current line when starting a new line
 " set smartindent
@@ -181,6 +182,7 @@ if has('win32')
 else
     set tags+=~/.vim/ctags/cpp
     set tags+=~/.vim/ctags/code_tags
+    set tags+=~/.vim/ctags/sys.tags
 endif
 "set tags+=~/.vim/tags/gl
 "set tags+=~/.vim/tags/sdl
@@ -276,6 +278,7 @@ endif
 " Plugin of Syntastic.vim setting
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_python_python_exec = '/opt/local/bin/python2.7'
+let g:syntastic_python_checkers = ["pep8"]
 
 " Plugin of UndoTree setting
 nnoremap <silent> <leader>ud :UndotreeToggle<CR>
@@ -284,4 +287,3 @@ let g:undotree_WindowLayout = 4
 " Preview the markdown file in chrome brower. Chrome brower has install
 " "markdown preview plus" plugin.
 autocmd BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn} map <Leader>y :!open -a /Applications/Google\ Chrome.app %:p <CR>
-"autocmd BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn} map <Leader>y :!start "/Applications/Google\ Chrome.app" "%:p"<CR>
