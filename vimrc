@@ -47,7 +47,7 @@ set autochdir                       "Set auto change current work folder.
 let mapleader = ","
 "search in document
 nnoremap <silent> <F3> :lv /\<<c-r>=expand("<cword>")<CR>\>/j %<CR>:lw<CR>
-nnoremap <silent> <F4> :lv /\<TODO\>/j ./**/*.cpp<CR>:lw<CR>
+nnoremap <silent> <F4> :lv /\c\<TODO\>/j ./**/*.cpp ./**/*.c<CR>:lw<CR>
 "switch windows
 nnoremap <silent> <C-Tab> <C-W>w
 "open setting preference
