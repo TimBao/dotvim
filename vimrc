@@ -157,6 +157,7 @@ call pathogen#helptags()
 " Some plugin need open the filetype
 filetype on
 filetype plugin on
+let filetype_m = 'objc'
 
 " Plugin of NERDTree.vim setting
 nmap <silent> <leader>fe :Vexplore<CR>
