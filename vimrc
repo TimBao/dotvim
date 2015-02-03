@@ -31,6 +31,7 @@ set list listchars=tab:>- ":retab   "Show tab as >-, use retab to clean up wihte
 
 set cursorline                      "Highlight the screen line of the cursor with CursorLine
 set cursorcolumn                    "Highlight the screen column of the cursor with CursorColumn
+
 "Convert Hightlight cursorline to underline
 hi cursorline guibg=NONE gui=underline
 

@@ -12,7 +12,7 @@
 	url = git://github.com/vim-scripts/taglist.vim.git
 [submodule "bundle/winmananger"]
 	path = bundle/winmananger
-	url = git://github.com/vim-scripts/winmanager.git
+	url = https://github.com/vim-scripts/winmanager.git
 [submodule "bundle/OmniCppComplete"]
 	path = bundle/OmniCppComplete
 	url = git://github.com/vim-scripts/OmniCppComplete.git
@@ -34,9 +34,6 @@
 [submodule "bundle/DrawIt"]
 	path = bundle/DrawIt
 	url = git://github.com/vim-scripts/DrawIt.git
-[submodule "bundle/Perforce"]
-	path = bundle/Perforce
-	url = git://github.com/vim-scripts/perforce.vim.git
 [submodule "bundle/EasyMotion"]
 	path = bundle/EasyMotion
 	url = git://github.com/Lokaltog/vim-easymotion.git
@@ -48,19 +45,19 @@
 	url = https://github.com/vim-scripts/cscope.vim.git
 [submodule "bundle/DoxygenToolkit"]
 	path = bundle/DoxygenToolkit
-	url = git@github.com:vim-scripts/DoxygenToolkit.vim.git
+	url = https://github.com/vim-scripts/DoxygenToolkit.vim.git
 [submodule "bundle/syntastic"]
 	path = bundle/syntastic
-	url = git@github.com:scrooloose/syntastic.git
+	url = https://github.com/scrooloose/syntastic.git
 [submodule "bundle/auto-pairs"]
 	path = bundle/auto-pairs
-	url = git@github.com:jiangmiao/auto-pairs.git
+	url = https://github.com/jiangmiao/auto-pairs.git
 [submodule "bundle/vim-airline"]
 	path = bundle/vim-airline
-	url = git@github.com:bling/vim-airline.git
+	url = https://github.com/bling/vim-airline.git
 [submodule "bundle/undotree"]
 	path = bundle/undotree
-	url = git@github.com:mbbill/undotree.git
+	url = https://github.com/mbbill/undotree.git
 [submodule "bundle/nerdcommenter"]
 	path = bundle/nerdcommenter
-	url = git@github.com:scrooloose/nerdcommenter.git
+	url = https://github.com/scrooloose/nerdcommenter.git
