@@ -282,7 +282,6 @@ endif
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_python_python_exec = '/opt/local/bin/python2.7'
 let g:syntastic_python_checkers = ["pep8"]
-"let g:syntastic_javascript_checker = ["jshint"]
 
 " Plugin of UndoTree setting
 nnoremap <silent> <leader>ud :UndotreeToggle<CR>
