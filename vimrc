@@ -7,6 +7,7 @@ set nowinfixwidth
 set number                          "Show line number
 set nocompatible                    "Close compatible model
 autocmd FileType python setlocal softtabstop=4 textwidth=78
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 
 " set autoindent                      "Copy indent from current line when starting a new line
 " set smartindent
@@ -281,6 +282,7 @@ endif
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_python_python_exec = '/opt/local/bin/python2.7'
 let g:syntastic_python_checkers = ["pep8"]
+"let g:syntastic_javascript_checker = ["jshint"]
 
 " Plugin of UndoTree setting
 nnoremap <silent> <leader>ud :UndotreeToggle<CR>
