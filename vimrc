@@ -46,26 +46,22 @@ set fileencoding=utf-8
 
 set autochdir                       "Set auto change current work folder.
 
-let mapleader = ","
+let mapleader = ','
 "search in document
-nnoremap <silent> <F3> :lv /\<<c-r>=expand("<cword>")<CR>\>/j %<CR>:lw<CR>
+nnoremap <silent> <F3> :lv /\<<c-r>=expand('<cword>')<CR>\>/j %<CR>:lw<CR>
 nnoremap <silent> <F4> :lv /\c\<TODO\>/j ./**/*.cpp ./**/*.c<CR>:lw<CR>
 "switch windows
 nnoremap <silent> <C-Tab> <C-W>w
 "open setting preference
-if has('win32')
-    map <leader>ee :e $vim/_vimrc<CR>
-else
-    noremap <leader>ee :e ~/.vimrc<CR>
-endif
+noremap <leader>ee :e ~/.vimrc<CR>
 
 "compile single file
 "au FileType c set makeprg=gcc\ %
 "au FIleType cpp set makeprg=g++ %
 
-if has("gui_win32")
+if has('gui_win32')
     au GUIEnter * simalt ~x
-elseif has("gui_macvim")
+elseif has('gui_macvim')
     au GUIEnter * call MaximizeWindow()
     "Set the guifont only for macvim
     set guifont=Menlo:h15
@@ -79,9 +75,9 @@ function! MaximizeWindow()
 endfunction
 
 function! RemoveTrailingWhitespace()
-    if &ft != "diff"
-        let b:curcol = col(".")
-        let b:curline = line(".")
+    if &ft != 'diff'
+        let b:curcol = col('.')
+        let b:curline = line('.')
         "remove only current line.
 "        silent! .s/\s\+$//
 "        silent! .s/\(\s*\n\)\+\%$//
@@ -115,7 +111,7 @@ function! s:GetDefinitionInfo()
     exe 'normal `a'
     exe 'normal "aY'
     let s:defline = substitute(@a, ';\n', '', '')
-    endfunction
+endfunction
 
 function! s:ImplementDefinition()
     call append('.', s:defline)
@@ -124,17 +120,17 @@ function! s:ImplementDefinition()
     s/\<virtual\>\s*//e
     s/\<static\>\s*//e
     if s:namespace == ''
-    let l:classString = s:class . "::"
+    let l:classString = s:class . '::'
     else
-    let l:classString = s:class . "::"
-    "let l:classString = s:namespace . "::" . s:class . "::"
+    let l:classString = s:class . '::'
+    "let l:classString = s:namespace . '::' . s:class . '::'
     endif
     " Remove default parameters
     s/\s\{-}=\s\{-}[^,)]\{1,}//e
     " Add class qualifier
     exe 'normal ^f(bi' . l:classString
     " Add brackets
-    exe "normal $o{\<CR>\<TAB>\<CR>}\<CR>\<ESC>kkkk"
+    exe 'normal $o{\<CR>\<TAB>\<CR>}\<CR>\<ESC>kkkk'
     " Fix indentation
     exe 'normal =4j^'
 endfunction
@@ -169,9 +165,7 @@ let NERDTreeWinSize = winwidth(0)/2
 " Plugin of taglist.vim setting
 let Tlist_Show_One_File=1
 let Tlist_Exit_OnlyWindow=1
-if !has('win32')
-    let Tlist_Ctags_Cmd = '/opt/local/bin/ctags'
-endif
+let Tlist_Ctags_Cmd = '/opt/local/bin/ctags'
 nmap <silent> <leader>fl :Tlist<CR>
 
 " Plugin of winmanager.vim setting
@@ -179,14 +173,9 @@ let g:winManagerWindowLayout='FileExplorer|TagList'
 nmap wm :WMToggle<CR>
 
 " Plugin of OmniCppComplete.vim setting
-if has('win32')
-    set tags+=$vim/vimfiles/ctags/cpp
-    set tags+=$vim/vimfiles/ctags/code_tags
-else
-    set tags+=~/.vim/ctags/cpp
-    set tags+=~/.vim/ctags/code_tags
-    set tags+=~/.vim/ctags/sys.tags
-endif
+set tags+=~/.vim/ctags/cpp
+set tags+=~/.vim/ctags/code_tags
+set tags+=~/.vim/ctags/sys.tags
 "set tags+=~/.vim/tags/gl
 "set tags+=~/.vim/tags/sdl
 "set tags+=~/.vim/tags/qt4
@@ -200,70 +189,44 @@ let OmniCpp_ShowPrototypeInAbbr = 1 " show function parameters
 let OmniCpp_MayCompleteDot = 1 " autocomplete after .
 let OmniCpp_MayCompleteArrow = 1 " autocomplete after ->
 let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
-let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
+let OmniCpp_DefaultNamespaces = ['std', '_GLIBCXX_STD']
 " automatically open and close the popup menu / preview window
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest,preview
 
 " Plugin of ConqueTerm.vim setting
-if has("win32")
-    noremap <leader>sh :ConqueTerm PowerShell.exe<CR>
-    noremap <leader>shs :ConqueTermSplit PowerShell.exe<CR>
-    noremap <leader>shv :ConqueTermVSplit PowerShell.exe<CR>
-    noremap <leader>sht :ConqueTermTab PowerShell.exe<CR>
-else
-    noremap <leader>sh :ConqueTerm bash<CR>
-    noremap <leader>shs :ConqueTermSplit bash<CR>
-    noremap <leader>shv :ConqueTermVSplit bash<CR>
-    noremap <leader>sht :ConqueTermTab bash<CR>
-endif
+noremap <leader>sh :ConqueTerm bash<CR>
+noremap <leader>shs :ConqueTermSplit bash<CR>
+noremap <leader>shv :ConqueTermVSplit bash<CR>
+noremap <leader>sht :ConqueTermTab bash<CR>
 
-if has('win32')
-    let g:ConqueTerm_PyVersion = 2
-    let g:ConqueTerm_PyExe = 'C:\Python27\python.exe'
-    let g:ConqueTerm_ColorMode = 'conceal'
-    let g:ConqueTerm_CodePage = 0
-else
-    let g:ConqueTerm_FastMode = 0
-    let g:ConqueTerm_Color = 1
-    let g:ConqueTerm_TERM = 'xterm'
-    let g:ConqueTerm_Syntax = 'conque'
-    let g:ConqueTerm_ReadUnfocused = 1
-endif
+let g:ConqueTerm_FastMode = 0
+let g:ConqueTerm_Color = 1
+let g:ConqueTerm_TERM = 'xterm'
+let g:ConqueTerm_Syntax = 'conque'
+let g:ConqueTerm_ReadUnfocused = 1
 
 " Plugin of python_pydiction.vim setting
 let g:pydiction_menu_height = 20
-if has('win32')
-    let g:pydiction_location='$vim/vimfiles/bundle/PyDiction/complete-dict'
-else
-    let g:pydiction_location='~/.vim/bundle/PyDiction/complete-dict'
-endif
+let g:pydiction_location='~/.vim/bundle/PyDiction/complete-dict'
 
 " Plugin of a.vim setting
-let g:alternateExtensions_CPP = "inc,h,H,HPP,hpp"
+let g:alternateExtensions_CPP = 'inc,h,H,HPP,hpp'
 
 " Plugin of snipMate.vim setting
-if has('win32')
-    let g:snippets_dir='$vim/vimfiles/bundle/SnipMate/snippets'
-else
-    let g:snippets_dir='~/.vim/bundle/SnipMate/snippets'
-endif
+let g:snippets_dir='~/.vim/bundle/SnipMate/snippets'
 
 " Plugin of EasyMotin.vim setting
 "let g:EasyMotion_leader_key = '<leader>'
 map <Leader> <Plug>(easymotion-prefix)
 
 " Plugin of ctrlp.vim setting
-if has('win32')
-    set runtimepath^=$vim/vimfiles/bundle/ctrlp.vim
-else
-    set runtimepath^=~.vim/bundle/Ctrlp
-endif
+"set runtimepath^=~.vim/bundle/Ctrlp
 
 " Add cscope db
 if has('cscope')
     set nocsverb
-    if !has('win32') && exists("$HOME/.vim/CSCOPEDB/cscope.out")
+    if !has('win32') && exists('$HOME/.vim/CSCOPEDB/cscope.out')
         cs add ~/.vim/CSCOPEDB/cscope.out
     endif
     set csverb
@@ -281,12 +244,12 @@ endif
 " Plugin of Syntastic.vim setting
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_python_python_exec = '/opt/local/bin/python2.7'
-let g:syntastic_python_checkers = ["pep8"]
+let g:syntastic_python_checkers = ['pep8']
 
 " Plugin of UndoTree setting
 nnoremap <silent> <leader>ud :UndotreeToggle<CR>
 let g:undotree_WindowLayout = 4
 
 " Preview the markdown file in chrome brower. Chrome brower has install
-" "markdown preview plus" plugin.
-autocmd BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn} map <Leader>y :!open -a /Applications/Google\ Chrome.app %:p <CR>
+" markdown preview plus plugin.
+" autocmd BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn} map <Leader>y :!open -a /Applications/Google\ Chrome.app %:p <CR>
